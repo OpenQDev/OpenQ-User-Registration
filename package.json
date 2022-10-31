@@ -1,0 +1,31 @@
+{
+	"name": "openq-user-registration",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start:dev": "nodemon index.js",
+		"test": "jest",
+		"test:int": "jest -t 'main'",
+		"push:staging": "defender-autotask update-code f8ecf46b-c14a-466e-a9c9-138006be1a27 .",
+		"push:production": "defender-autotask update-code <> ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.26.0",
+		"cookie-signature": "^1.2.0"
+	},
+	"devDependencies": {
+		"axios-mock-adapter": "^1.20.0",
+		"dotenv": "^14.3.2",
+		"ethers": "5.4.1",
+		"express": "^4.17.2",
+		"nodemon": "^2.0.15",
+		"defender-relay-client": "1.11.1",
+		"jest": "^27.4.7",
+		"eslint": "^8.13.0",
+		"eslint-plugin-unused-imports": "^2.0.0"
+	}
+}

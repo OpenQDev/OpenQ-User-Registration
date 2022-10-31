@@ -1,0 +1,41 @@
+{
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2021": true,
+		"jest": true
+	},
+	"extends": [
+		"eslint:recommended"
+	],
+	"parserOptions": {
+		"requireConfigFile": false,
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"unused-imports"
+	],
+	"rules": {
+		"no-async-promise-executor": "off",
+		"no-inner-declarations": "off",
+		"no-useless-catch": "off",
+		"no-useless-escape": "off",
+		"indent": [
+			"error",
+			"tab"
+		],
+		"linebreak-style": 0,
+		"quotes": [
+			"error",
+			"single"
+		],
+		"semi": [
+			"error",
+			"always"
+		]
+	}
+}

@@ -16,15 +16,15 @@ app.post('/', async (req, res) => {
 	const contractWithWallet = contract.connect(wallet);
 
 	// Prepare data for event
-	const { issueUrl, payoutAddress } = req.body;
+	const { userId, userAddress } = req.body;
 	const signedOAuthToken = req.headers['x-authorization'];
 
 	// Construct event
 	const event = {
 		request: {
 			body: {
-				issueUrl,
-				payoutAddress
+				userId,
+				userAddress
 			},
 			headers: {
 				'x-authorization': signedOAuthToken
@@ -33,7 +33,6 @@ app.post('/', async (req, res) => {
 		secrets: {
 			COOKIE_SIGNER: process.env.COOKIE_SIGNER,
 			OPENQ_PROXY_ADDRESS: process.env.OPENQ_PROXY_ADDRESS,
-			PAT: process.env.PAT
 		},
 		apiKey,
 		apiSecret,

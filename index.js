@@ -1,7 +1,6 @@
 // Helper methods
 const main = require('./main');
 const OPENQ_ABI = require('./OpenQABI.json');
-const CLAIM_MANAGER_ABI = require('./ClaimManagerABI.json');
 const STAGING_AUTOTASK_ID = '27766ed2-4997-42b7-bfd5-43dfe20acb2c';
 const PRODUCTION_AUTOTASK_ID = '1224e6b1-20f6-4f55-96b1-f9cf0683ebc8';
 
@@ -10,14 +9,14 @@ exports.handler = async (event) => {
 	let OPENQ_PROXY_ADDRESS;
 
 	switch (event.autotaskId) {
-		case STAGING_AUTOTASK_ID:
-			OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS_STAGING;
-			break;
-		case PRODUCTION_AUTOTASK_ID:
-			OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS_PRODUCTION;
-			break;
-		default:
-			OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS;
+	case STAGING_AUTOTASK_ID:
+		OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS_STAGING;
+		break;
+	case PRODUCTION_AUTOTASK_ID:
+		OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS_PRODUCTION;
+		break;
+	default:
+		OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS;
 	}
 
 	console.log('OPENQ PROXY ADDRESS', OPENQ_PROXY_ADDRESS);

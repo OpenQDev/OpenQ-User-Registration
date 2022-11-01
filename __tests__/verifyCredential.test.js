@@ -1,9 +1,7 @@
 const verifyCredential = require('../lib/verifyCredential');
 const {
-	ISSUE_DOES_NOT_EXIST,
 	GITHUB_OAUTH_TOKEN_LACKS_PRIVILEGES,
-	RATE_LIMITED,
-	RATE_LIMITED_PAT
+	RATE_LIMITED
 } = require('../errors');
 
 const axios = require('axios');

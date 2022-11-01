@@ -2,7 +2,6 @@ const express = require('express');
 const ethers = require('ethers');
 const main = require('./main');
 const OPENQ_ABI = require('./OpenQABI.json');
-const CLAIM_MANAGER_ABI = require('./ClaimManagerABI.json');
 require('dotenv').config();
 
 const { API_KEY: apiKey, API_SECRET: apiSecret } = process.env;
@@ -13,7 +12,6 @@ app.post('/', async (req, res) => {
 	// Construct local signer
 	const provider = new ethers.providers.JsonRpcProvider(process.env.PROVIDER_URL);
 	const contract = new ethers.Contract(process.env.OPENQ_PROXY_ADDRESS, OPENQ_ABI, provider);
-	const claimManager = new ethers.Contract(process.env.CLAIM_MANAGER_PROXY_ADDRESS, CLAIM_MANAGER_ABI, provider);
 	const wallet = new ethers.Wallet(process.env.ORACLE_PRIVATE_KEY, provider);
 	const contractWithWallet = contract.connect(wallet);
 

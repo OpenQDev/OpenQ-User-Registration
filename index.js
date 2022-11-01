@@ -1,7 +1,7 @@
 // Helper methods
 const main = require('./main');
 const OPENQ_ABI = require('./OpenQABI.json');
-const STAGING_AUTOTASK_ID = '27766ed2-4997-42b7-bfd5-43dfe20acb2c';
+const STAGING_AUTOTASK_ID = 'f8ecf46b-c14a-466e-a9c9-138006be1a27';
 const PRODUCTION_AUTOTASK_ID = '1224e6b1-20f6-4f55-96b1-f9cf0683ebc8';
 
 // Autotask Entrypoint - constructs signer and contract using Relay
@@ -9,14 +9,14 @@ exports.handler = async (event) => {
 	let OPENQ_PROXY_ADDRESS;
 
 	switch (event.autotaskId) {
-	case STAGING_AUTOTASK_ID:
-		OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS_STAGING;
-		break;
-	case PRODUCTION_AUTOTASK_ID:
-		OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS_PRODUCTION;
-		break;
-	default:
-		OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS;
+		case STAGING_AUTOTASK_ID:
+			OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS_STAGING;
+			break;
+		case PRODUCTION_AUTOTASK_ID:
+			OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS_PRODUCTION;
+			break;
+		default:
+			OPENQ_PROXY_ADDRESS = event.secrets.OPENQ_PROXY_ADDRESS;
 	}
 
 	console.log('OPENQ PROXY ADDRESS', OPENQ_PROXY_ADDRESS);

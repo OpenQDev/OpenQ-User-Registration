@@ -22,7 +22,7 @@ const main = async (
 			const { viewerIsValid } = await verifyCredential(userId, oauthToken);
 
 			if (viewerIsValid) {
-				const options = { gasLimit: 3000000 };
+				const options = { gasLimit: 300000 };
 
 				const txn = await contract.associateExternalIdToAddress(userId, userAddress, options);
 

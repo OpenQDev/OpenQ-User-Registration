@@ -2,7 +2,7 @@
 const main = require('./main');
 const OPENQ_ABI = require('./OpenQABI.json');
 const STAGING_AUTOTASK_ID = 'f8ecf46b-c14a-466e-a9c9-138006be1a27';
-const PRODUCTION_AUTOTASK_ID = '1224e6b1-20f6-4f55-96b1-f9cf0683ebc8';
+const PRODUCTION_AUTOTASK_ID = '85e04325-4fb9-4aee-bd6c-01d004652a70';
 
 // Autotask Entrypoint - constructs signer and contract using Relay
 exports.handler = async (event) => {

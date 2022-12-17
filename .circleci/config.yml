@@ -21,6 +21,16 @@ jobs:
               echo "" >> $(pwd)/.env
               echo "API_SECRET=$API_SECRET" >> $(pwd)/.env
             fi
+      - run: wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32
+      - run: sudo mv jq-linux32 /usr/local/bin/jq
+      - run: sudo chmod +x /usr/local/bin/jq
+      - run: jq 'del(.devDependencies)' package.json > tmp && mv tmp package.json
+      - run: npm install
+      - run:
+          name: Update Autotask
+          command: |
+            npm install -g defender-autotask-client
+            npm run push:staging
       - run:
           name: Update Autotask
           command: |

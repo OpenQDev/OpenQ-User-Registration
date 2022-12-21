@@ -23,7 +23,7 @@
 		"dotenv": "14.3.2",
 		"ethers": "5.4.1",
 		"express": "4.17.2",
-		"nodemon": "2.0.15",
+		"nodemon": "2.0.20",
 		"defender-relay-client": "1.11.1",
 		"jest": "27.4.7",
 		"eslint": "8.13.0",

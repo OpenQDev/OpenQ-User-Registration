@@ -24,7 +24,7 @@
 		"ethers": "5.4.1",
 		"express": "4.17.2",
 		"nodemon": "2.0.15",
-		"defender-relay-client": "1.11.1",
+		"defender-relay-client": "1.37.0",
 		"jest": "27.4.7",
 		"eslint": "8.13.0",
 		"eslint-plugin-unused-imports": "2.0.0"
